@@ -1,4 +1,4 @@
-Get-ADGroupMember -Identity "wvdteachingstaff" | ? {$_.objectclass -eq "group"} |
+Get-ADGroupMember -Identity "groupname" | ? {$_.objectclass -eq "group"} |
  foreach { Get-ADGroupMember -Identity $_.samaccountname  | ? {$_.objectclass -eq "group"}|
     foreach { Get-ADGroupMember -Identity $_.samaccountname  | ? {$_.objectclass -eq "group"}|
         foreach { Get-ADGroupMember -Identity $_.samaccountname -recursive| Get-ADUser -Properties mail | select name,mail}
