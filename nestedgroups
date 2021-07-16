@@ -4,4 +4,4 @@ Get-ADGroupMember -Identity "wvdteachingstaff" | ? {$_.objectclass -eq "group"} 
         foreach { Get-ADGroupMember -Identity $_.samaccountname -recursive| Get-ADUser -Properties mail | select name,mail}
     }
  }|
- export-csv -path c:\temp\wvdteachingstaff.csv
+ export-csv -path xxx.csv
